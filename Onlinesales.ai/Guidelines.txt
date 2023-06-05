@@ -1,0 +1,20 @@
+ Here's a summary of the guidelines for each task:
+
+Task 1: SQL Query
+- Ensure the SQL query is executable and free of errors.
+- Test the query with various scenarios, including different data and edge cases.
+- Clarify any assumptions made regarding table names and column names.
+- Provide instructions on how to run the query.
+
+Task 2: Python Script
+- Ensure the Python script is executable and free of errors.
+- Test the script with various scenarios, including different data and edge cases.
+- Clarify any assumptions made regarding file locations and column names in CSV files.
+- Provide instructions on how to run the script.
+
+Task 3: Debugging
+- Provide the updated code for both the Bash and Python scripts.
+- Explain the fixes made to address the bugs.
+- Test the scripts with various scenarios, including different values of "n" and edge cases.
+- Provide instructions on how to run the updated scripts.
+

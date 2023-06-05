@@ -1,0 +1,33 @@
+import csv
+from collections import defaultdict
+
+# Function to read data from a CSV file and calculate average monthly salary for each department
+def calculate_average_salary(file_path):
+    department_salaries = defaultdict(list)
+
+    with open(file_path, 'r') as file:
+        csv_reader = csv.DictReader(file)
+        for row in csv_reader:
+            department_salaries[row['DEPT_NAME']].append(float(row['MONTHLY_SALARY']))
+
+    average_salaries = {}
+    for department, salaries in department_salaries.items():
+        average_salaries[department] = sum(salaries) / len(salaries)
+
+    return average_salaries
+
+# Read data from CSV files and calculate average monthly salaries for each department
+csv_files = ['departments.csv', 'employees.csv', 'salaries.csv']
+department_average_salaries = calculate_average_salary(csv_files[2])
+
+# Sort departments by average monthly salary in descending order and retrieve top 3
+top_departments = sorted(department_average_salaries.items(), key=lambda x: x[1], reverse=True)[:3]
+
+# Generate the report
+print("DEPT_NAME")
+print("AVG_MONTHLY_SALARY (USD)")
+print()
+for department, average_salary in top_departments:
+    print(department)
+    print("{:.2f}".format(average_salary))
+    print()
